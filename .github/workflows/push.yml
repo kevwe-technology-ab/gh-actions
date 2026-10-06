@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone and Build Golang Project
-        uses: .github/actions/golang/action.yml@v1
+        uses:  ./.github/actions/golang
         with:
           repo-url: "https://code.kevwe.com/rbrain.git/"
 
