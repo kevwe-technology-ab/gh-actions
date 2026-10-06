@@ -24,12 +24,12 @@ runs:
       shell: bash
       run: |
         curl -LO https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
-        tar -C /usr/local -xzf go1.27.1.linux-amd64.tar.gz
+        tar -C $HOME/opt -xzf go1.27.1.linux-amd64.tar.gz
 
     - name: Build
       id: build-go-project
       env:
-        PATH: ${{ env.PATH }}:/usr/local/go/bin
+        PATH: ${{ env.PATH }}:$HOME/opt/go/bin
       shell: bash
       run: |
         cd workdir 
