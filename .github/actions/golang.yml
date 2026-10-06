@@ -9,6 +9,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Checkout Own Code and Actions
+      uses: actions/checkout@v7
+
     - name: Checkout Golang code
       id: checkout-go-code
       shell: bash
