@@ -16,8 +16,8 @@ runs:
       id: checkout-go-code
       shell: bash
       run: |
-        mkdir workdir && cd workdir
-        git clone ${{ inputs.repo-url }} .
+        mkdir workdir 
+        git clone ${{ inputs.repo-url }} workdir
 
     - name: Build
       id: golang-install
