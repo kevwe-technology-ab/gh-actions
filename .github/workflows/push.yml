@@ -1,12 +1,8 @@
-name: Generic Cron Job
-
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '35 0 * * *'
+name: At Every Push
+on: push
 
 jobs:
-  run-script:
+  clone-and-list:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
