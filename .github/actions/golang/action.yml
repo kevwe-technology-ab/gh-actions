@@ -25,8 +25,7 @@ runs:
       run: |
         curl -LO https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
         mkdir -p $HOME/opt && tar -C $HOME/opt -xzf go1.27.1.linux-amd64.tar.gz
-        find $HOME/opt
-
+        
     - name: Build
       id: build-go-project
       shell: bash
@@ -34,4 +33,3 @@ runs:
         cd workdir 
         $HOME/opt/go/bin/go build -v .
         echo "After"
-        find $HOME/opt
