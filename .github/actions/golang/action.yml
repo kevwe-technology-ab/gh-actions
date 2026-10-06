@@ -32,6 +32,6 @@ runs:
       shell: bash
       run: |
         cd workdir 
-        $HOME/opt/bin/go build -v .
+        $HOME/opt/go/bin/go build -v .
         echo "After"
-        $HOME/opt
+        find $HOME/opt
