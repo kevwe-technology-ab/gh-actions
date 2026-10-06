@@ -33,4 +33,4 @@ runs:
       shell: bash
       run: |
         cd workdir 
-        go build -v .
+        $HOME/opt/bin/go build -v .
