@@ -29,7 +29,7 @@ runs:
     - name: Build
       id: build-go-project
       env:
-        PATH: ${{ env.PATH }}:$HOME/opt/go/bin
+        PATH: ${{ env.PATH }}:$HOME/opt/bin
       shell: bash
       run: |
         cd workdir 
