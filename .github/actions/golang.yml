@@ -1,0 +1,20 @@
+name: 'Build Golang Project'
+description: 'Builds the Golang project'
+
+inputs:
+  repo-url:
+    description: 'The Git repository URL'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout Golang code
+      id: checkout-go-code
+      shell: bash
+      run: |
+        git clone ${{ inputs.repo-url }} .
+
+    - name: Build
+      id: build-go-project
+      run: go build -v .
