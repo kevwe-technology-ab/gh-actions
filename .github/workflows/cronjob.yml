@@ -3,8 +3,9 @@ name: Generic Cron Job
 on:
   workflow_dispatch:
   schedule:
-    - cron: '25 18 * * *'
-    - timezone: 'Europe/Stockholm'
+    - cron: '33 18 * * *'
+      timezone: 'Europe/Stockholm'
+
 
 jobs:
   run-script:
