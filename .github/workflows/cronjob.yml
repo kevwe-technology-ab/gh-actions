@@ -3,9 +3,7 @@ name: Generic Cron Job
 on:
   workflow_dispatch:
   schedule:
-    - cron: '33 18 * * *'
-      timezone: 'Europe/Stockholm'
-
+    - cron: '25 17 * * *' # Every day at 18:25 UTC
 
 jobs:
   run-script:
