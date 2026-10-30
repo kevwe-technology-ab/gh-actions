@@ -1,6 +1,7 @@
-name: Daily Cron Job
+name: Generic Cron Job
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '25 17 * * *' # Every day at 18:25 UTC
 
@@ -9,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+
       - name: Run script
         run: echo "Scheduled job ran at $(date -u)"
+
+      - name: List files
+        run: |
+          find .

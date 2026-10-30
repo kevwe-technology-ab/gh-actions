@@ -1,0 +1,34 @@
+name: 'Build Golang Project'
+description: 'Builds the Golang project'
+
+inputs:
+  repo-url:
+    description: 'The Git repository URL'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Checkout Own Code and Actions
+      uses: actions/checkout@v7
+
+    - name: Checkout Golang code
+      id: checkout-go-code
+      shell: bash
+      run: |
+        mkdir workdir 
+        git clone ${{ inputs.repo-url }} workdir
+
+    - name: Build
+      id: golang-install
+      shell: bash
+      run: |
+        curl -LO https://go.dev/dl/go1.27.1.linux-amd64.tar.gz
+        mkdir -p $HOME/opt && tar -C $HOME/opt -xzf go1.27.1.linux-amd64.tar.gz
+
+    - name: Build
+      id: build-go-project
+      shell: bash
+      run: |
+        cd workdir 
+        $HOME/opt/go/bin/go build -v .

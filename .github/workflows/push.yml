@@ -1,0 +1,25 @@
+name: At Every Push
+on: push
+
+jobs:
+  clone-and-list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: List files
+        run: |
+          find .
+  build-golang:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Clone and Build Golang Project
+        uses:  ./.github/actions/golang
+        with:
+          repo-url: https://code.kevwe.com/git/rbrain.git
+
+
